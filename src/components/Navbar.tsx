@@ -12,9 +12,6 @@ function Navbar() {
           <Link className='text-2xl font-medium text-gray-600' to='/Product'>Product</Link>
         </div>
         <div>
-          <Link className='text-2xl font-medium text-gray-600' to='/Shopping'>Shopping</Link>
-        </div>
-        <div>
           <Link className='text-2xl font-medium text-gray-600' to='/Contact'>Contact</Link>
         </div>
       </nav>

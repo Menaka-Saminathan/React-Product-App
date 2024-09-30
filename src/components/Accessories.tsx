@@ -19,12 +19,30 @@ import acces20 from '../assets/acces-20.webp'
 import acces21 from '../assets/acces-21.webp'
 import acces22 from '../assets/acces-22.webp'
 import acces23 from '../assets/acces-23.webp'
+import { useState } from 'react'
 
 
 
 function Accessories() {
+  const [cartCount, setCartCount] = useState(0);
+
+  const handleAddToCart = () => {
+    setCartCount(prevCount => prevCount + 1);
+  };
   return (
     <>
+      <div className="flex gap-80">
+        <form className="flex border border-gray-300 ml-96 my-5 rounded-md w-2/5 justify-between p-2">
+          <div>
+            <i className="fa-solid fa-magnifying-glass h-5 text-gray-500 pr-2"></i>
+            <input type="text" placeholder="Search..." className="outline-0" />
+          </div>
+        </form>
+        <div className="flex mt-7 gap-3">
+            <i className="fa-solid fa-cart-shopping text-lg"></i>
+            <p className="text-lg">Accessory Cart: {cartCount}</p> {/* Display cart count */}
+        </div>
+      </div>
       <div className="flex gap-40 p-5 ml-20">
         <div className=" border rounded-xl p-5  bg-rose-50">
           <div className="w-60 m-5">
@@ -33,7 +51,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Design Scale</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -43,7 +61,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Baggy Bag</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -53,7 +71,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-2">
             <p>Astro Book</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
       </div>
@@ -65,7 +83,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Stamp</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -75,7 +93,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Stamp</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -85,7 +103,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-2">
             <p>Pencil Pouch</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
       </div>
@@ -97,7 +115,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Sticker</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -107,7 +125,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Diary</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -117,7 +135,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-2">
             <p>Sticker</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
       </div>
@@ -129,7 +147,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Design Tap</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -139,7 +157,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Flowery Sticker</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -149,7 +167,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-2">
             <p>Flowery Sticker</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
       </div>
@@ -161,7 +179,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Panda Sticker</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -171,7 +189,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Pencil Bag</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -181,7 +199,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-2">
             <p>Pencil Baggy</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
       </div>
@@ -193,7 +211,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Color Marker</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -203,7 +221,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Color Sketch</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -213,7 +231,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-2">
             <p>Black Marker</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
       </div>
@@ -225,7 +243,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Sticker</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -235,7 +253,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
             <p>Stamp</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
         <div className=" border rounded-xl p-5  bg-rose-50">
@@ -245,7 +263,7 @@ function Accessories() {
           <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-2">
             <p>Stamp</p>
             <span>Price : 299</span>
-            <button className="text-xl py-3 text-center bg-green-50">Add Cart</button>
+            <button className="text-xl py-3 text-center bg-green-50" onClick={()=>handleAddToCart()}>Add Cart</button>
           </div>
         </div>
       </div>
