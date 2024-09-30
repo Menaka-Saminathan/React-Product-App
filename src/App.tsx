@@ -1,29 +1,16 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Accessories from './components/Accessories';
-import Contact from './components/Contact';
+import Accessories from './pages/Accessories';
+import Contact from './pages/Contact';
 import { Cart } from './components/CartContext';
-import Index from './components/Index';
-import Home from './components/Home';
-import Product from './components/Product';
+import Index from './pages/Index';
+import Home from './pages/Home';
+import Product from './pages/Product';
+import CartDetails from './pages/CartDetails';
 
 function App() {
   return (
     <>
-      {/* <CartProvider>
-        <Home />
-      </CartProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Index />} />
-          <Route path='/Home' element={<Home />}/>
-          <Route path='Product' element={<Product />}>
-            <Route path='Accessories' element={<Accessories />} />
-          </Route>
-          <Route path='/Contact' element={<Contact />} />
-        </Routes>
-      </BrowserRouter> */}
-
       <BrowserRouter>
         <Cart>
           <Routes>
@@ -33,6 +20,7 @@ function App() {
               <Route path='Accessories' element={<Accessories />} />
             </Route>
             <Route path='/Contact' element={<Contact />} />
+            <Route path='/CartDetails' element={<CartDetails />} />
           </Routes>
         </Cart>
       </BrowserRouter>

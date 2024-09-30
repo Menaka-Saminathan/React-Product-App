@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import indeximg from '../assets/index.webp'
 import '../Mystyle.scss'
-import Timer from './Time'
+import Timer from '../components/Time'
 
 function index() {
   const navigate = useNavigate()

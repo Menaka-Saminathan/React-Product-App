@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 import Authenticate from "../hoc/Authenticate";
-import ImageSlider from "./ImageSlider";
+import ImageSlider from "../components/ImageSlider";
 import svg1 from '../assets/svg-1.png';
 import svg3 from '../assets/svg-3.png';
 import star1 from '../assets/star-1.svg';
