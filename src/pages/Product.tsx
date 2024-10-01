@@ -1,13 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
 import { useCart} from '../components/CartContext';
-import {ProductList} from "./ProductList";
+import {ProductList} from "../Data/ProductList.tsx";
 import CartDetails from "./CartDetails";
+import Navbar from "./Navbar.tsx";
 
 function Product() {
   const { addToCart, cartItems } = useCart();
   
   return (
     <div className="bg-slate-50">
+      <Navbar/>
       <div className="flex gap-80">
         <form className="flex border border-gray-300 ml-96 my-5 rounded-md w-2/5 justify-between p-2">
           <div>
@@ -39,7 +41,7 @@ function Product() {
         ))}
       </div>
       <hr className='b-2 my-10 w-full' />
-      <div className="text-center bg text-4xl">
+      <div className="text-center bg text-3xl text-slate-600">
         <button>
           Click here to Get More <Link className='text-4xl' to='Accessories'>Accessories</Link>
         </button>

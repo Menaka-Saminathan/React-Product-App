@@ -1,9 +1,12 @@
 import blog1 from '../assets/blog-1.jpg'
 import blog2 from '../assets/blog-2.jpg'
 import blog3 from '../assets/blog-3.webp'
+import Navbar from './Navbar'
+
 function Contact() {
   return (
     <>
+      <Navbar />
       <div className="flex pl-20 pt-10">
         <hr className='border border-gray-300 w-2/5 mt-10' />
         <p className=" pt-5 text-orange-900 px-10 text-2xl">Blog Posts <i className="fa-solid fa-book-open"></i></p>

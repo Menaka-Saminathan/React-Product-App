@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
-import { AccessoryList } from './AccessoriesList'
+import { AccessoryList } from '../Data/AccessoriesList'
 import CartDetails from './CartDetails'
 
 function Accessories() {

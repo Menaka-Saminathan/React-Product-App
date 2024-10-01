@@ -6,7 +6,7 @@ const Timer = () => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  const deadline = "october, 3,2024";
+  const deadline = "october, 5,2024";
 
   const getTime = (deadline: string) => {
     const time = Date.parse(deadline) - Date.now();

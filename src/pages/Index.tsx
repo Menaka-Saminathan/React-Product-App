@@ -24,7 +24,6 @@ function index() {
       <div className='text-center p-8'>
         <button className='px-3 py-2 rounded-lg text-md bg-orange-100' onClick={()=> navigate('/Home')}>Get Home </button>
       </div>
-
     </>
   )
 }
