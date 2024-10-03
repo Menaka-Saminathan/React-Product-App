@@ -1,4 +1,3 @@
-
 export type CartContextType = {
   cartTotal: number;
   cartItems: ProductType[];
@@ -13,3 +12,10 @@ export type ProductType = {
   price: number;
   quantity: number;
 };
+
+export type ButtonType = {
+  className: String,
+  name: String, 
+  onClick: () => void,
+  varient: String
+}
