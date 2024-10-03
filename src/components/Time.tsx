@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const Timer = () => {
   const [days, setDays] = useState(0);
@@ -25,24 +25,32 @@ const Timer = () => {
 
   return (
     <>
-      <div className='flex gap-10'>
+      <div className="flex gap-10">
         <div className="">
-          <p className='text-2xl text-indigo-900' >{days < 10 ? "0" + days : days}</p>
-          <span className='text-2xl text-indigo-900'>Days</span>
+          <p className="text-2xl text-indigo-900">
+            {days < 10 ? "0" + days : days}
+          </p>
+          <span className="text-2xl text-indigo-900">Days</span>
         </div>
         <div className="">
-          <p className='text-2xl text-indigo-900' >{hours < 10 ? "0" + hours : hours}</p>
-          <span className='text-2xl text-indigo-900'>Hours</span>
+          <p className="text-2xl text-indigo-900">
+            {hours < 10 ? "0" + hours : hours}
+          </p>
+          <span className="text-2xl text-indigo-900">Hours</span>
         </div>
         <div className="">
-          <p className='text-2xl text-indigo-900'>{minutes < 10 ? "0" + minutes : minutes}</p>
-          <span className='text-2xl text-indigo-900' >Minutes</span>
+          <p className="text-2xl text-indigo-900">
+            {minutes < 10 ? "0" + minutes : minutes}
+          </p>
+          <span className="text-2xl text-indigo-900">Minutes</span>
         </div>
         <div className="">
-          <p className='text-2xl text-indigo-900'>{seconds < 10 ? "0" + seconds : seconds}</p>
-          <span className='text-2xl text-indigo-900'>Seconds</span>
+          <p className="text-2xl text-indigo-900">
+            {seconds < 10 ? "0" + seconds : seconds}
+          </p>
+          <span className="text-2xl text-indigo-900">Seconds</span>
         </div>
-       </div>
+      </div>
     </>
   );
 };
