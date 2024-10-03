@@ -6,7 +6,7 @@ import { Cart } from "./components/CartContext";
 import Index from "./pages/Index";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
-import CartDetails from "./pages/CartDetails";
+import CartDetails from "./components/CartDetails";
 
 function App() {
   return (

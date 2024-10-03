@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import Authenticate from "../hoc/Authenticate";
 import ImageSlider from "../components/ImageSlider";

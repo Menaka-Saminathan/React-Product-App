@@ -1,8 +1,8 @@
 import { Link, Outlet } from "react-router-dom";
 import { useCart } from "../components/CartContext";
 import { ProductList } from "../Data/ProductList.tsx";
-import CartDetails from "./CartDetails";
-import Navbar from "./Navbar.tsx";
+import CartDetails from "../components/CartDetails.tsx";
+import Navbar from "../components/Navbar.tsx";
 import ProductItems from "../components/ProductItems.tsx";
 
 function Product() {

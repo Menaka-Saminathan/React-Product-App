@@ -2,9 +2,18 @@
   padding: 8px 0px;
   border-radius: 8px;
   text-align: center;
-  background-color: rgb(93, 93, 242);
+  background-color: rgb(99 102 241);
   color: white;
 }
 .secondary {
   font-size: 30px;
+}
+.third {
+top: 50%;
+position: absolute;
+background-color: rgb(31 41 55);
+opacity: 0.2;
+color: white;
+padding: 0px 4px 2px;
+font-size: 30px;
 }

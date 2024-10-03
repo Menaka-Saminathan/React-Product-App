@@ -21,19 +21,6 @@ export const CartItems = (props: {
         <p className="text-xl font-bold">${props.element.price}</p>
         <div className="flex gap-5">
           <CartButton element={props.element} />
-          {/* <Button
-            className="text-3xl"
-            varient="secondary"
-            onClick={() => addToCart(props.element)}
-            name="+"
-          />
-          <p className=" text-2xl mt-1">{props.element.quantity}</p>
-          <Button
-            className="text-3xl"
-            varient="secondary"
-            onClick={() => removeFromCart(props.element)}
-            name="-"
-          /> */}
         </div>
       </div>
     </>

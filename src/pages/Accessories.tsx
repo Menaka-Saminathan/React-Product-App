@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../components/CartContext";
 import { AccessoryList } from "../Data/AccessoriesList";
-import CartDetails from "./CartDetails";
+import CartDetails from "../components/CartDetails";
 import AccessoryItem from "../components/AccessoryItem";
 
 function Accessories() {
