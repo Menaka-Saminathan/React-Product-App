@@ -50,8 +50,8 @@ export const Cart = ({ children }: { children: ReactNode }) => {
     }),
     [cartItems, cartTotal]
   );
-
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+
 };
 
 export const useCart = () => {

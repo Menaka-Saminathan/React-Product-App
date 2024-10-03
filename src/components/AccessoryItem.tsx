@@ -24,6 +24,7 @@ function AccessoryItem(props: { accessory: ProductType }) {
       <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
         <p>{props.accessory.title}</p>
         <span>Price : {props.accessory.price}</span>
+<<<<<<< HEAD
         {accessory ? (
           <div className="border-black rounded-lg w-32 px-5 py-1 bg-indigo-500 text-white">
             <CartButton element={accessory} />
@@ -36,6 +37,19 @@ function AccessoryItem(props: { accessory: ProductType }) {
             name="Add Cart"
           />
         )}
+=======
+        {(accessory) ? (
+          <div className="border-black rounded-lg w-32 px-5 py-1 bg-indigo-500 text-white">
+            <CartButton element={accessory} /> 
+          </div>
+        ) : (
+          <Button
+          className='w-36 text-lg' varient='primary'
+          onClick={() => addToCart(props.accessory)} name='Add Cart'
+        />
+        )}
+        
+>>>>>>> cc71eb518ccb053a6cb1f83a7b7a65df26bed6e8
       </div>
     </div>
   );

@@ -6,7 +6,6 @@ export const CartItems = (props: {
   element: ProductType;
   index: Key | null | undefined;
 }) => {
-  // const { removeFromCart, addToCart } = useCart();
 
   return (
     <>
