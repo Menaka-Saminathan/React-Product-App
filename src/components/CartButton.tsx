@@ -1,5 +1,5 @@
 import Button from "./Button";
-import { useCart } from "./CartContext";
+import { useCart } from "../context/CartContext";
 import { ProductType } from "../type/Type";
 
 function CartButton(props: { element: ProductType }) {

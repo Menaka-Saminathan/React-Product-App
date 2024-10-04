@@ -1,13 +1,9 @@
-import book1 from "../assets/book-1.jpg";
-import book2 from "../assets/book-2.jpg";
 import book3 from "../assets/book-3.jpg";
 import book4 from "../assets/book-4.jpg";
-import book5 from "../assets/book-5.jpg";
 import book6 from "../assets/book-6.jpg";
 import book8 from "../assets/book-8.jpg";
 import book9 from "../assets/book-9.jpg";
 import book10 from "../assets/book-10.jpg";
-import book11 from "../assets/book-11.jpg";
 import book13 from "../assets/book-13.jpg";
 import book14 from "../assets/book-14.jpg";
 import book15 from "../assets/book-15.jpg";
@@ -15,20 +11,11 @@ import book16 from "../assets/book-16.jpg";
 import book17 from "../assets/book-17.jpg";
 import book18 from "../assets/book-18.jpg";
 import book20 from "../assets/book-20.jpg";
-import book21 from "../assets/book-21.jpg";
 import book22 from "../assets/book-22.jpg";
-import book24 from "../assets/book-24.jpg";
 import book25 from "../assets/book-25.jpg";
+import { ProductType } from "../type/Type";
 
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-  quantity: number;
-}
-
-export const ProductList: Product[] = [
+export const ProductList: ProductType[] = [
   {
     id: 1,
     title: "Better Than Best Friends",
@@ -38,9 +25,9 @@ export const ProductList: Product[] = [
   },
   {
     id: 2,
-    title: "50 Greatest Short Stories",
+    title: "Love With Her Best Friend",
     price: 299,
-    image: book24,
+    image: book20,
     quantity: 0,
   },
   {
@@ -50,9 +37,26 @@ export const ProductList: Product[] = [
     image: book25,
     quantity: 0,
   },
-  { id: 4, title: "I Love You Daddy", price: 299, image: book15, quantity: 0 },
-  { id: 5, title: "I Love You Mummy", price: 299, image: book13, quantity: 0 },
-  { id: 6, title: "I Love My Family", price: 299, image: book14, quantity: 0 },
+  { 
+    id: 4, 
+    title: "I Love You Daddy", 
+    price: 299, 
+    image: book15, 
+    quantity: 0 },
+
+  { 
+    id: 5, 
+    title: "I Love You Mummy", 
+    price: 299, 
+    image: book13, 
+    quantity: 0 },
+
+  { 
+    id: 6, 
+    title: "I Love My Family", 
+    price: 299, 
+    image: book14, 
+    quantity: 0 },
   {
     id: 7,
     title: "The Art Of Letting Go",
@@ -60,8 +64,22 @@ export const ProductList: Product[] = [
     image: book3,
     quantity: 0,
   },
-  { id: 8, title: "Autotheory", price: 299, image: book4, quantity: 0 },
-  { id: 9, title: "You Only Live Once", price: 299, image: book6, quantity: 0 },
+  { 
+    id: 8, 
+    title: "Autotheory", 
+    price: 299, 
+    image: book4, 
+    quantity: 0 
+
+  },
+  { 
+    id: 9, 
+    title: "You Only Live Once", 
+    price: 299, 
+    image: book6, 
+    quantity: 0 
+
+  },
   {
     id: 10,
     title: "One Arranged Marriage Murder",
@@ -83,37 +101,24 @@ export const ProductList: Product[] = [
     image: book10,
     quantity: 0,
   },
-  { id: 13, title: `I'd Love To Be`, price: 299, image: book16, quantity: 0 },
-  { id: 14, title: "The Gruffalo", price: 299, image: book17, quantity: 0 },
-  { id: 15, title: "The Lion Inside", price: 299, image: book18, quantity: 0 },
-  { id: 16, title: "Untold Feelings", price: 299, image: book11, quantity: 0 },
-  {
-    id: 17,
-    title: "Love With Her Best Friend",
-    price: 299,
-    image: book20,
-    quantity: 0,
+  { 
+    id: 13,
+    title: `I'd Love To Be`, 
+    price: 299, 
+    image: book16, 
+    quantity: 0 
   },
-  {
-    id: 18,
-    title: "All I Ever Want Is You",
-    price: 299,
-    image: book21,
-    quantity: 0,
-  },
-  {
-    id: 19,
-    title: `I Don't Love You Anymore`,
-    price: 299,
-    image: book1,
-    quantity: 0,
-  },
-  { id: 20, title: "Warmth", price: 299, image: book2, quantity: 0 },
-  {
-    id: 21,
-    title: "You Belong With Me",
-    price: 299,
-    image: book5,
-    quantity: 0,
-  },
+  { 
+    id: 14, 
+    title: "The Gruffalo", 
+    price: 299, 
+    image: book17, 
+    quantity: 0 },
+  { 
+    id: 15, 
+    title: "The Lion Inside", 
+    price: 299, 
+    image: book18, 
+    quantity: 0 
+  }
 ];

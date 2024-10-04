@@ -1,5 +1,5 @@
 import { ProductType } from "../type/Type";
-import { useCart } from "./CartContext";
+import { useCart } from "../context/CartContext";
 import Button from "./Button";
 import { useEffect, useState } from "react";
 import CartButton from "./CartButton";

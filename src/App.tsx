@@ -2,26 +2,36 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Accessories from "./pages/Accessories";
 import Contact from "./pages/Contact";
-import { Cart } from "./components/CartContext";
-import Index from "./pages/Index";
+import { Cart } from "./context/CartContext";
+import Login from "./pages/UserLogin";
+// import Index from "./pages/Index";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import CartDetails from "./components/CartDetails";
+import { Authenticate } from "./context/Authenticate";
+import { PrivateRoute } from "./router/PrivateRoute";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Cart>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Product" element={<Product />}>
-              <Route path="Accessories" element={<Accessories />} />
-            </Route>
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="/CartDetails" element={<CartDetails />} />
-          </Routes>
+          <Authenticate>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route element={<PrivateRoute/>}>
+                <Route
+                  path="/Home"
+                  element={<Home />}
+                />
+              </Route>
+              <Route path="/Product" element={<Product />}>
+                <Route path="Accessories" element={<Accessories />} />
+              </Route>
+              <Route path="/Contact" element={<Contact />} />
+              <Route path="/CartDetails" element={<CartDetails />} />
+            </Routes>
+          </Authenticate>
         </Cart>
       </BrowserRouter>
     </>

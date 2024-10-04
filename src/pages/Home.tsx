@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
-import Authenticate from "../hoc/Authenticate";
 import ImageSlider from "../components/ImageSlider";
 import svg1 from "../assets/svg-1.png";
 import svg3 from "../assets/svg-3.png";
@@ -67,4 +66,4 @@ function Home() {
   );
 }
 
-export default Authenticate(Home);
+export default Home;
