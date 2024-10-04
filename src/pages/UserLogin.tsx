@@ -1,5 +1,5 @@
-import { FormEvent, FormEventHandler, useCallback, useState } from "react";
-import { UserData } from "../Data/UserData";
+import { FormEvent, useCallback, useState } from "react";
+import { UserData } from "../data/UserData";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/Authenticate";
 
@@ -8,23 +8,25 @@ export default function UserLogin() {
   const [email, setEmail] = useState<String>("");
   const [password, setPassword] = useState<String>("");
   const [error, setError] = useState<String>("");
-
   const { Login } = useAuth();
 
   const handleLogin = useCallback((e: FormEvent) => {
     e.preventDefault();
-    let users = UserData.find((user) => {
-      return user.email == email && user.password == password;
+    let users = UserData.find((element) => {
+      return element.email === email && element.password === password;
     });
-    console.log(users);
-    console.log(email);
-    console.log(password);
-
     if (users) {
       Login();
       navigate("/Home");
-    } else setError("Invalid email or passowrd");
-  }, []);
+    } else if (email === "") {
+      setError("Invalid email")  
+    } else if (password === "") {
+      setError("Invalid password")
+    } else {
+      setError("Invalid credential.. Please check")
+    };
+  }, [email, password]);
+
 
   return (
     <div className="flex justify-center pt-60">
@@ -36,10 +38,7 @@ export default function UserLogin() {
           <input
             className="ml-3 outline-0 bg-transparent placeholder-gray-400"
             type="email"
-            onChange={(e) => {
-              setEmail(e.target.value);
-              console.log(e.target.value);
-            }}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your mail address"
           />
         </div>
@@ -50,14 +49,12 @@ export default function UserLogin() {
           <input
             className="ml-3 outline-0 bg-transparent placeholder-gray-400"
             type="password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-              console.log(e.target.value);
-            }}
+            onChange={(e) => setPassword(e.target.value)
+             }
             placeholder="Enter your Password"
           />
         </div>
-        {error ? <p>{error}</p> : <></>}
+        {error ? <p className="py-2">{error}</p> : <></>}
         <div className="flex justify-between">
           <button className="mt-3 text-lg px-3 py-1 text-blue-700 hover:text-red-600">
             Forgot Password..?

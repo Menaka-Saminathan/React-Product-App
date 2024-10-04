@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { useCart } from "../context/CartContext.tsx";
-import { ProductList } from "../Data/ProductList.tsx";
+import { ProductList } from "../data/ProductList.tsx";
 import CartDetails from "../components/CartDetails.tsx";
 import Navbar from "../components/Navbar.tsx";
 import ProductItems from "../components/ProductItems.tsx";

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Accessories from "./pages/Accessories";
 import Contact from "./pages/Contact";
 import { Cart } from "./context/CartContext";
-import Login from "./pages/UserLogin";
+import UserLogin from "./pages/UserLogin";
 // import Index from "./pages/Index";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
@@ -18,7 +18,7 @@ function App() {
         <Cart>
           <Authenticate>
             <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={<UserLogin />} />
               <Route element={<PrivateRoute/>}>
                 <Route
                   path="/Home"

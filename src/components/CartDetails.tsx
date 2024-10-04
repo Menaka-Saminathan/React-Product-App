@@ -8,19 +8,21 @@ const CartDetails = () => {
   const { cartItems, cartTotal } = useCart();
 
   return (
-    <div className="bg-slate-50 p-10 ">
-      <h2 className="text-3xl mb-5">Cart Details</h2>
+    <div className=" p-10 ">
+      <h2 className="text-3xl font-semibold mb-5">Cart Details</h2>
       {cartItems.length === 0 ? (
         <p className="text-5xl font-semibold mb-4">Your cart is empty.</p>
       ) : (
-        <div className="flex flex-col gap-6">
+        <>
+        <div className="flex gap-7">
           {cartItems.map((cart, index) => (
             <CartItems element={cart} index={index} />
           ))}
-          <div className="my-6 text-xl font-bold">
-            <p>Total: ${cartTotal}</p>
-          </div>
         </div>
+        <div className="my-6 text-xl font-bold">
+        <p>Total: ${cartTotal}</p>
+      </div>
+        </>
       )}
       <Button
         className="w-40 px-3"

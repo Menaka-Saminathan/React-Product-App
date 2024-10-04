@@ -54,7 +54,7 @@ function Home() {
         </div>
         <hr className="b-2 my-10 w-full" />
       </div>
-      <div className="text-center bg-slate-100 m-3">
+      <div className="text-center m-3">
         <button
           onClick={() => navigate("/product")}
           className="font-semibold text-4xl text-sky-500 p-5"
