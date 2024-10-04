@@ -9,9 +9,11 @@ function ProductItems(props: { element: ProductType }) {
   const [carts, setCarts] = useState(
     cartItems.find((items) => items.id == props.element.id)
   );
+  
   useEffect(() => {
     setCarts(cartItems.find((items) => items.id == props.element.id));
   }, [cartItems, props.element.id]);
+
   return (
     <div key={props.element.id} className="border rounded-xl p-5 bg-rose-50">
       <div className="m-5">

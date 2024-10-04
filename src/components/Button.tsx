@@ -3,7 +3,7 @@ import "../scss/Button.scss";
 
 function Button({ className, name, onClick, varient }: ButtonType) {
   return (
-    <button className={`${className}, ${varient}`} onClick={onClick}>
+    <button className={`Hover:outline-black ${className} ${varient}`} onClick={onClick}>
       {name}
     </button>
   );

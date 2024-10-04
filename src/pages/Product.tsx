@@ -2,15 +2,15 @@ import { Link, Outlet } from "react-router-dom";
 import { useCart } from "../context/CartContext.tsx";
 import { ProductList } from "../data/ProductList.tsx";
 import CartDetails from "../components/CartDetails.tsx";
-import Navbar from "../components/Navbar.tsx";
 import ProductItems from "../components/ProductItems.tsx";
+import { ACCESSORY_PATH, CARTDETAILS_PATH } from "../constant/constant.tsx";
 
 function Product() {
   const { cartItems } = useCart();
 
   return (
     <div className="bg-slate-50">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="flex gap-80">
         <form className="flex border border-gray-300 ml-96 my-5 rounded-md w-2/5 justify-between p-2">
           <div>
@@ -25,7 +25,7 @@ function Product() {
         <div className="flex mt-7 gap-3">
           <i className="fa-solid fa-cart-shopping text-lg"></i>
           <div>
-            <Link to={"/CartDetails"}>
+            <Link to={CARTDETAILS_PATH}>
               <button className="text-lg" onClick={() => CartDetails}>
                 Shopping Cart: {cartItems.length}
               </button>
@@ -42,7 +42,7 @@ function Product() {
       <div className="text-center bg text-3xl text-slate-600">
         <button>
           Click here to Get More{" "}
-          <Link className="text-4xl" to="Accessories">
+          <Link className="text-4xl" to={ACCESSORY_PATH}>
             Accessories
           </Link>
         </button>

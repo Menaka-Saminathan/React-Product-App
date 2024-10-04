@@ -5,15 +5,13 @@ const AuthContext = createContext<AuthProps | undefined>(undefined)
 
 export function Authenticate({ children }: Props) {
   const [isValid , setIsValid] = useState<boolean>(false);
-  const Login = useCallback(() => setIsValid(true),[]);
-  const Logout = useCallback(() => setIsValid(false),[]);
+  const Login = () => setIsValid(true);
   
-  const value = useMemo(() => ({
+  const value = ({
     isValid,
     Login,
-    Logout
-    }), [isValid, Login, Logout]
-  );
+    });
+    
   return (
     <AuthContext.Provider value={value}> {children} </AuthContext.Provider>
   )

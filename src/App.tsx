@@ -4,12 +4,13 @@ import Accessories from "./pages/Accessories";
 import Contact from "./pages/Contact";
 import { Cart } from "./context/CartContext";
 import UserLogin from "./pages/UserLogin";
-// import Index from "./pages/Index";
+import Index from "./pages/Index";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import CartDetails from "./components/CartDetails";
 import { Authenticate } from "./context/Authenticate";
 import { PrivateRoute } from "./router/PrivateRoute";
+import { PRODUCT_PATH, HOME_PATH, CONTACT_PATH, CARTDETAILS_PATH, USER_LOGIN, ACCESSORY_PATH } from "./constant/constant";
 
 function App() {
   return (
@@ -18,18 +19,16 @@ function App() {
         <Cart>
           <Authenticate>
             <Routes>
-              <Route path="/" element={<UserLogin />} />
-              <Route element={<PrivateRoute/>}>
-                <Route
-                  path="/Home"
-                  element={<Home />}
-                />
+              <Route path="/" element={<Index />}></Route>
+              <Route path={USER_LOGIN} element={<UserLogin />} />
+              <Route element={<PrivateRoute />}>
+                <Route path={HOME_PATH} element={<Home />} />
               </Route>
-              <Route path="/Product" element={<Product />}>
-                <Route path="Accessories" element={<Accessories />} />
+              <Route path={PRODUCT_PATH} element={<Product />}>
+                <Route path={ACCESSORY_PATH} element={<Accessories />} />
               </Route>
-              <Route path="/Contact" element={<Contact />} />
-              <Route path="/CartDetails" element={<CartDetails />} />
+              <Route path={CONTACT_PATH} element={<Contact />} />
+              <Route path={CARTDETAILS_PATH} element={<CartDetails />} />
             </Routes>
           </Authenticate>
         </Cart>

@@ -2,6 +2,7 @@ import { FormEvent, useCallback, useState } from "react";
 import { UserData } from "../data/UserData";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/Authenticate";
+import { HOME_PATH } from "../constant/constant";
 
 export default function UserLogin() {
   const navigate = useNavigate();
@@ -17,7 +18,9 @@ export default function UserLogin() {
     });
     if (users) {
       Login();
-      navigate("/Home");
+      navigate(HOME_PATH);
+    }else if (email === "" && password == "") {
+      setError("Empty inputs are not accept")  
     } else if (email === "") {
       setError("Invalid email")  
     } else if (password === "") {
@@ -29,9 +32,9 @@ export default function UserLogin() {
 
 
   return (
-    <div className="flex justify-center pt-60">
-      <form className="" onSubmit={(e: FormEvent) => handleLogin(e)}>
-        <div className="pl-5 py-2 rounded-lg border border-gray-200 text-xl">
+    <div className="flex justify-end pr-20 h-screen pt-40 bg-login ">
+      <form className="h-4/5 bg-rose-50 rounded-lg p-8" onSubmit={(e: FormEvent) => handleLogin(e)}>
+        <div className="pl-5 py-2 rounded-lg border border-gray-400 text-xl">
           <label className="text-orange-800" htmlFor="Email-address">
             Email-add :
           </label>
@@ -42,7 +45,7 @@ export default function UserLogin() {
             placeholder="Enter your mail address"
           />
         </div>
-        <div className="px-8 py-2 rounded-lg border border-gray-200 text-xl mt-3">
+        <div className="px-8 py-2 rounded-lg border border-gray-400 text-xl mt-3">
           <label className="text-orange-800" htmlFor="Password">
             Password :
           </label>
@@ -54,19 +57,19 @@ export default function UserLogin() {
             placeholder="Enter your Password"
           />
         </div>
-        {error ? <p className="py-2">{error}</p> : <></>}
-        <div className="flex justify-between">
-          <button className="mt-3 text-lg px-3 py-1 text-blue-700 hover:text-red-600">
-            Forgot Password..?
-          </button>
-          <button className="mt-3 text-xl px-3 rounded-lg bg-gray-400 py-1 text-white hover:text-black">
+        <div className="flex justify-between my-3">
+        {error && <p className="text-red-500 text-lg">{error}</p>}
+          <button className="text-lg rounded-sm px-3 py-1 bg-gray-300">
             Sign-in
           </button>
         </div>
         <div className="text-center my-4 text-xl">
+        <button className="text-lg px-3 py-1 text-blue-700 hover:text-red-600">
+            Forgot Password..?
+          </button>
           <p>
             Not a member..?
-            <button className="mt-3 text-xl px-3 py-1 text-red-500 hover:text-red-600">
+            <button className="text-xl px-3 py-1 text-red-500 hover:text-red-600">
               {" "}
               Register..!
             </button>

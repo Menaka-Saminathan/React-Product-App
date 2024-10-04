@@ -45,7 +45,6 @@ export type user = {
 export type AuthProps = {
   isValid: boolean;
   Login: () => void;
-  Logout: () => void;
 };
 
 export type Props = { 

@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import { PRODUCT_PATH, HOME_PATH, CONTACT_PATH } from "../constant/constant";
 import "../App.css";
 
 function Navbar() {
@@ -6,20 +7,21 @@ function Navbar() {
     <>
       <nav className=" flex gap-44 justify-center py-5 h-18 bg-gray-100 m-3">
         <div>
-          <Link className="text-2xl font-medium text-gray-600" to="/Home">
+          <Link className="text-2xl font-medium" to={HOME_PATH}>
             Home
           </Link>
         </div>
         <div>
-          <Link className="text-2xl font-medium text-gray-600" to="/Product">
+          <Link className="text-2xl font-medium" to={PRODUCT_PATH}>
             Product
           </Link>
         </div>
         <div>
-          <Link className="text-2xl font-medium text-gray-600" to="/Contact">
+          <Link className="text-2xl font-medium" to={CONTACT_PATH}>
             Contact
           </Link>
         </div>
+        <Outlet />
       </nav>
     </>
   );

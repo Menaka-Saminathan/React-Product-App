@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import indeximg from "../assets/index.webp";
 import "../scss/Mystyle.scss";
-import Timer from "../components/Time";
+import Timer from "../components/Timer";
+import { USER_LOGIN } from "../constant/constant";
 
-function index() {
+export default function Index() {
   const navigate = useNavigate();
   return (
     <>
@@ -45,13 +46,11 @@ function index() {
       <div className="text-center p-8">
         <button
           className="px-3 py-2 rounded-lg text-md bg-orange-100"
-          onClick={() => navigate("/Home")}
+          onClick={() => navigate(USER_LOGIN)}
         >
-          Get Home{" "}
+          Get Login
         </button>
       </div>
     </>
   );
 }
-
-export default index;

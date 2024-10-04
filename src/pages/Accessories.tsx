@@ -3,6 +3,7 @@ import { useCart } from "../context/CartContext";
 import { AccessoryList } from "../data/AccessoriesList";
 import CartDetails from "../components/CartDetails";
 import AccessoryItem from "../components/AccessoryItem";
+import { CARTDETAILS_PATH } from "../constant/constant";
 
 function Accessories() {
   const { cartItems } = useCart();
@@ -24,7 +25,7 @@ function Accessories() {
           <div className="flex mt-7 gap-3">
             <i className="fa-solid fa-cart-shopping text-lg"></i>
             <div>
-              <Link to={"/CartDetails"}>
+              <Link to={CARTDETAILS_PATH}>
                 <button className="text-lg" onClick={() => CartDetails}>
                   Shopping Cart: {cartItems.length}
                 </button>

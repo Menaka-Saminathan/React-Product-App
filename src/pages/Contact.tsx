@@ -1,13 +1,11 @@
 import blog1 from "../assets/blog-1.jpg";
 import blog2 from "../assets/blog-2.jpg";
 import blog3 from "../assets/blog-3.webp";
-import Navbar from "../components/Navbar";
 
 
 function Contact() {
   return (
     <>
-      <Navbar />
       <div className="flex pl-20 pt-10">
         <hr className="border border-gray-300 w-2/5 mt-10" />
         <p className=" pt-5 text-orange-900 px-10 text-2xl">
@@ -22,7 +20,7 @@ function Contact() {
             Monthly Phone Wallpaper
           </h1>
           <p className="text-gray-500 text-base text-center mt-3">
-            BY WHITE WHALE BOOK STORE ON SEP,24 2024{" "}
+            BY WHITE WHALE BOOK STORE ON SEP,24 2024
           </p>
           <p className="text-xs text-center mt-3">
             This October, we are here to deliver some lunar magic🐈‍⬛✨{" "}

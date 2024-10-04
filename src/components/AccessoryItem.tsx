@@ -4,14 +4,16 @@ import Button from "./Button";
 import { useEffect, useState } from "react";
 import CartButton from "./CartButton";
 
-function AccessoryItem(props: { accessory: ProductType }) {
+export default function AccessoryItem(props: { accessory: ProductType }) {
   const { addToCart, cartItems } = useCart();
   const [accessory, setAccessory] = useState(
     cartItems.find((items) => items.id == props.accessory.id)
   );
+
   useEffect(() => {
     setAccessory(cartItems.find((item) => item.id == props.accessory.id));
   });
+
   return (
     <div key={props.accessory.id} className="border rounded-xl p-5 bg-rose-50">
       <div className="m-5">
@@ -40,5 +42,3 @@ function AccessoryItem(props: { accessory: ProductType }) {
     </div>
   );
 }
-
-export default AccessoryItem;

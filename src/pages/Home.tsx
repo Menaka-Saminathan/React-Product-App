@@ -7,6 +7,7 @@ import star1 from "../assets/star-1.svg";
 import star2 from "../assets/star-2.svg";
 import home2 from "../assets/home-2.jpg";
 import home3 from "../assets/home-3.jpg";
+import { PRODUCT_PATH } from "../constant/constant";
 
 function Home() {
   const navigate = useNavigate();
@@ -24,14 +25,14 @@ function Home() {
             src={star1}
             height={50}
             width={50}
-            alt="Star Rating 1"
+            alt="Star 1"
             className="pt-0"
           />
           <img
             src={star2}
             height={50}
             width={50}
-            alt="Star Rating 2"
+            alt="Star 2"
             className="pt-9"
           />
           <img src={svg3} height={200} width={100} alt="Decorative" />
@@ -52,11 +53,11 @@ function Home() {
           <img src={home2} width={800} alt="Fiction Books" />
           <img src={home3} width={800} alt="Manga Best Seller" />
         </div>
-        <hr className="b-2 my-10 w-full" />
+        <hr className="b-2 mt-10 w-full" />
       </div>
-      <div className="text-center m-3">
+      <div className="text-center">
         <button
-          onClick={() => navigate("/product")}
+          onClick={() => navigate(PRODUCT_PATH)}
           className="font-semibold text-4xl text-sky-500 p-5"
         >
           Click here to get Product

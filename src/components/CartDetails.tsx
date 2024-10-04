@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import {PRODUCT_PATH} from "../constant/constant";
 import CartItems from "./CartItems";
 import Button from "./Button";
 
@@ -27,7 +28,7 @@ const CartDetails = () => {
       <Button
         className="w-40 px-3"
         varient="primary"
-        onClick={() => navigate(-1)}
+        onClick={() => navigate(PRODUCT_PATH)}
         name="Back to product"
       />
     </div>
