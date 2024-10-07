@@ -1,3 +1,4 @@
+import { Accessory } from "../type/Type";
 import acces1 from "../assets/acces-1.webp";
 import acces2 from "../assets/acces-2.webp";
 import acces3 from "../assets/acces-3.webp";
@@ -13,7 +14,6 @@ import acces19 from "../assets/acces-19.webp";
 import acces20 from "../assets/acces-20.webp";
 import acces21 from "../assets/acces-21.webp";
 import acces22 from "../assets/acces-22.webp";
-import { Accessory } from "../type/Type";
 
 
 export const AccessoryList: Accessory[] = [

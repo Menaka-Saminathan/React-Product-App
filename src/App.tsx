@@ -1,16 +1,23 @@
-import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Cart } from "./context/CartContext";
+import { Authenticate } from "./context/Authenticate";
+import CartDetails from "./components/CartDetails";
+import {
+  PRODUCT_PATH,
+  HOME_PATH,
+  CONTACT_PATH,
+  CARTDETAILS_PATH,
+  USER_LOGIN,
+  ACCESSORY_PATH,
+} from "./constant/constant";
 import Accessories from "./pages/Accessories";
 import Contact from "./pages/Contact";
-import { Cart } from "./context/CartContext";
-import UserLogin from "./pages/UserLogin";
 import Index from "./pages/Index";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
-import CartDetails from "./components/CartDetails";
-import { Authenticate } from "./context/Authenticate";
+import UserLogin from "./pages/UserLogin";
 import { PrivateRoute } from "./router/PrivateRoute";
-import { PRODUCT_PATH, HOME_PATH, CONTACT_PATH, CARTDETAILS_PATH, USER_LOGIN, ACCESSORY_PATH } from "./constant/constant";
+import "./App.css";
 
 function App() {
   return (

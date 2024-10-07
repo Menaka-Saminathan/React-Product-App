@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import indeximg from "../assets/index.webp";
-import "../scss/Mystyle.scss";
 import Timer from "../components/Timer";
 import { USER_LOGIN } from "../constant/constant";
+import "../scss/Mystyle.scss";
+import indeximg from "../assets/index.webp";
 
 export default function Index() {
   const navigate = useNavigate();

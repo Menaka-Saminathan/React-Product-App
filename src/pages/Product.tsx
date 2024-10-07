@@ -1,9 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
 import { useCart } from "../context/CartContext.tsx";
-import { ProductList } from "../data/ProductList.tsx";
 import CartDetails from "../components/CartDetails.tsx";
 import ProductItems from "../components/ProductItems.tsx";
 import { ACCESSORY_PATH, CARTDETAILS_PATH } from "../constant/constant.tsx";
+import { ProductList } from "../data/ProductList.tsx";
 
 function Product() {
   const { cartItems } = useCart();

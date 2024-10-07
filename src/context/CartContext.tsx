@@ -1,10 +1,6 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  ReactNode
-} from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 import { Product, Carts } from "../type/Type";
+
 const CartContext = createContext<Carts | undefined>(undefined);
 
 export const Cart = ({ children }: { children: ReactNode }) => {
@@ -12,16 +8,16 @@ export const Cart = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
 
   const addToCart = (product: Product) => {
-      const existingCart = cartItems.find((item) => item.id == product.id);
-      if (existingCart) {
-        existingCart.quantity += 1;
-        setCartItems(cartItems);
-      } else {
-        product.quantity += 1;
-        setCartItems([...cartItems, product]);
-      }
-      setCartTotal(cartTotal + product.price);
+    const existingCart = cartItems.find((item) => item.id == product.id);
+    if (existingCart) {
+      existingCart.quantity += 1;
+      setCartItems(cartItems);
+    } else {
+      product.quantity += 1;
+      setCartItems([...cartItems, product]);
     }
+    setCartTotal(cartTotal + product.price);
+  };
 
   const removeFromCart = (product: Product) => {
     const existingCart = cartItems.find((item) => item.id == product.id);
@@ -34,16 +30,15 @@ export const Cart = ({ children }: { children: ReactNode }) => {
       }
     }
     setCartTotal(cartTotal - product.price);
-  }
+  };
 
-  const value = ({
-      removeFromCart,
-      cartTotal,
-      addToCart,
-      cartItems,
-    })
+  const value = {
+    removeFromCart,
+    cartTotal,
+    addToCart,
+    cartItems,
+  };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
-
 };
 
 export const useCart = () => {

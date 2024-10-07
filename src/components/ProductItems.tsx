@@ -1,8 +1,8 @@
-import { Product } from "../type/Type";
+import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
 import Button from "./Button";
-import { useEffect, useState } from "react";
 import CartButton from "./CartButton";
+import { Product } from "../type/Type";
 
 function ProductItems(props: { element: Product }) {
   const { addToCart, cartItems } = useCart();

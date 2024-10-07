@@ -1,13 +1,13 @@
-import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import ImageSlider from "../components/ImageSlider";
+import Navbar from "../components/Navbar";
+import { PRODUCT_PATH } from "../constant/constant";
 import svg1 from "../assets/svg-1.png";
 import svg3 from "../assets/svg-3.png";
 import star1 from "../assets/star-1.svg";
 import star2 from "../assets/star-2.svg";
 import home2 from "../assets/home-2.jpg";
 import home3 from "../assets/home-3.jpg";
-import { PRODUCT_PATH } from "../constant/constant";
 
 function Home() {
   const navigate = useNavigate();

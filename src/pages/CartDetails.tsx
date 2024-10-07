@@ -22,8 +22,10 @@ const CartDetails = () => {
         </div>
       )}
       <Button
-        className='w-40 px-3' varient='primary'
-        onClick={() => navigate(PRODUCT_PATH)} name='Back to product'
+        className="w-40 px-3"
+        varient="primary"
+        onClick={() => navigate(PRODUCT_PATH)}
+        name="Back to product"
       />
     </div>
   );

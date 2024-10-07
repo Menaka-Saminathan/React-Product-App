@@ -1,3 +1,4 @@
+import { Product } from "../type/Type";
 import book3 from "../assets/book-3.jpg";
 import book4 from "../assets/book-4.jpg";
 import book6 from "../assets/book-6.jpg";
@@ -13,7 +14,6 @@ import book18 from "../assets/book-18.jpg";
 import book20 from "../assets/book-20.jpg";
 import book22 from "../assets/book-22.jpg";
 import book25 from "../assets/book-25.jpg";
-import { Product } from "../type/Type";
 
 export const ProductList: Product[] = [
   {
