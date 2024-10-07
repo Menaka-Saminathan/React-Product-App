@@ -4,14 +4,14 @@ import {
   useState,
   ReactNode
 } from "react";
-import { ProductType, CartContextType } from "../type/Type";
-const CartContext = createContext<CartContextType | undefined>(undefined);
+import { Product, Carts } from "../type/Type";
+const CartContext = createContext<Carts | undefined>(undefined);
 
 export const Cart = ({ children }: { children: ReactNode }) => {
   const [cartTotal, setCartTotal] = useState<number>(0);
-  const [cartItems, setCartItems] = useState<ProductType[]>([]);
+  const [cartItems, setCartItems] = useState<Product[]>([]);
 
-  const addToCart = (product: ProductType) => {
+  const addToCart = (product: Product) => {
       const existingCart = cartItems.find((item) => item.id == product.id);
       if (existingCart) {
         existingCart.quantity += 1;
@@ -23,7 +23,7 @@ export const Cart = ({ children }: { children: ReactNode }) => {
       setCartTotal(cartTotal + product.price);
     }
 
-  const removeFromCart = (product: ProductType) => {
+  const removeFromCart = (product: Product) => {
     const existingCart = cartItems.find((item) => item.id == product.id);
     if (existingCart) {
       existingCart.quantity -= 1;

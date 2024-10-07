@@ -13,10 +13,10 @@ import acces19 from "../assets/acces-19.webp";
 import acces20 from "../assets/acces-20.webp";
 import acces21 from "../assets/acces-21.webp";
 import acces22 from "../assets/acces-22.webp";
-import { accessory } from "../type/Type";
+import { Accessory } from "../type/Type";
 
 
-export const AccessoryList: accessory[] = [
+export const AccessoryList: Accessory[] = [
   {
     id: 1,
     title: "Design Scale",

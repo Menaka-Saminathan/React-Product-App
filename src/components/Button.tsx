@@ -1,9 +1,9 @@
-import { ButtonType } from "../type/Type";
+import { ButtonField } from "../type/Type";
 import "../scss/Button.scss";
 
-function Button({ className, name, onClick, varient }: ButtonType) {
+function Button({ className, name, onClick, varient }: ButtonField) {
   return (
-    <button className={`Hover:outline-black ${className} ${varient}`} onClick={onClick}>
+    <button className={`Hover: outline-black ${className} ${varient}`} onClick={onClick}>
       {name}
     </button>
   );

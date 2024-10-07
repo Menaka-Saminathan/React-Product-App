@@ -1,10 +1,10 @@
 import { useCart } from "../context/CartContext";
-import { ProductType } from "../type/Type";
+import { Product } from "../type/Type";
 import Button from "./Button";
 import { useEffect, useState } from "react";
 import CartButton from "./CartButton";
 
-export default function AccessoryItem(props: { accessory: ProductType }) {
+export default function AccessoryItem(props: { accessory: Product }) {
   const { addToCart, cartItems } = useCart();
   const [accessory, setAccessory] = useState(
     cartItems.find((items) => items.id == props.accessory.id)

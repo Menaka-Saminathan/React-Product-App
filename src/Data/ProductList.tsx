@@ -13,9 +13,9 @@ import book18 from "../assets/book-18.jpg";
 import book20 from "../assets/book-20.jpg";
 import book22 from "../assets/book-22.jpg";
 import book25 from "../assets/book-25.jpg";
-import { ProductType } from "../type/Type";
+import { Product } from "../type/Type";
 
-export const ProductList: ProductType[] = [
+export const ProductList: Product[] = [
   {
     id: 1,
     title: "Better Than Best Friends",

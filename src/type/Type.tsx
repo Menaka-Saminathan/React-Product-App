@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 
-export type CartContextType = {
+export type Carts = {
   cartTotal: number;
-  cartItems: ProductType[];
-  addToCart: (product: ProductType) => void;
-  removeFromCart: (product: ProductType) => void;
+  cartItems: Product[];
+  addToCart: (product: Product) => void;
+  removeFromCart: (product: Product) => void;
 };
 
-export type ProductType = {
+export type Product = {
   id?: number | undefined;
   image?: string | undefined;
   title: string;
@@ -15,7 +15,7 @@ export type ProductType = {
   quantity: number;
 };
 
-export interface accessory {
+export interface Accessory {
   id: number;
   title: string;
   price: number;
@@ -24,7 +24,7 @@ export interface accessory {
 }
 
 
-export type ButtonType = {
+export type ButtonField = {
   className: String;
   name: String;
   onClick: () => void;

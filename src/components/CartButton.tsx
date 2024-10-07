@@ -1,8 +1,8 @@
 import Button from "./Button";
 import { useCart } from "../context/CartContext";
-import { ProductType } from "../type/Type";
+import { Product } from "../type/Type";
 
-function CartButton(props: { element: ProductType }) {
+function CartButton(props: { element: Product }) {
   const { addToCart, removeFromCart } = useCart();
 
   return (

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { getTime } from "../utils/GetTime";
 
 const Timer = () => {
   const [days, setDays] = useState(0);
@@ -6,19 +7,20 @@ const Timer = () => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  const deadline = "october, 5,2024";
+  const deadline = "october, 10,2024";
 
-  const getTime = (deadline: string) => {
-    const time = Date.parse(deadline) - Date.now();
-
-    setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
-    setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
-    setMinutes(Math.floor((time / 1000 / 60) % 60));
-    setSeconds(Math.floor((time / 1000) % 60));
+  const updateTimer = () => {
+    const { days, hours, minutes, seconds } = getTime(deadline);
+    setDays(days);
+    console.log(days);
+    
+    setHours(hours);
+    setMinutes(minutes);
+    setSeconds(seconds);
   };
 
   useEffect(() => {
-    const interval = setInterval(() => getTime(deadline), 1000);
+    const interval = setInterval(() => updateTimer(), 1000);
 
     return () => clearInterval(interval);
   }, []);

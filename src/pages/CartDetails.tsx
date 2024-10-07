@@ -15,9 +15,7 @@ const CartDetails = () => {
         <p className="text-5xl font-semibold mb-4">Your cart is empty.</p>
       ) : (
         <div className="flex flex-col gap-6">
-          {cartItems.map((cart, index) => (
-            <CartItems element={cart} index={index} />
-          ))}
+          <CartItems />
           <div className="my-6 text-xl font-bold">
             <p>Total: ${cartTotal}</p>
           </div>
