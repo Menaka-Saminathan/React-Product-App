@@ -4,7 +4,7 @@ import Button from "./Button";
 import CartButton from "./CartButton";
 import { Element } from "../type/Type";
 
-function ProductItems({element}: Element) {
+export default function ProductItems({element}: Element) {
   const { addToCart, cartItems } = useCart();
   const [carts, setCarts] = useState(
     cartItems.find((items) => items.id == element.id)
@@ -38,5 +38,3 @@ function ProductItems({element}: Element) {
     </div>
   );
 }
-
-export default ProductItems;
