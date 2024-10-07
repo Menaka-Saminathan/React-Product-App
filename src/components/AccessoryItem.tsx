@@ -1,7 +1,7 @@
+import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
 import { Product } from "../type/Type";
 import Button from "./Button";
-import { useEffect, useState } from "react";
 import CartButton from "./CartButton";
 
 export default function AccessoryItem(props: { accessory: Product }) {
@@ -12,7 +12,7 @@ export default function AccessoryItem(props: { accessory: Product }) {
 
   useEffect(() => {
     setAccessory(cartItems.find((item) => item.id == props.accessory.id));
-  });
+  }, [cartItems, props.accessory.id]);
 
   return (
     <div key={props.accessory.id} className="border rounded-xl p-5 bg-rose-50">

@@ -1,7 +1,7 @@
 import { Key } from "react";
+import { useCart } from "../context/CartContext";
 import { Product } from "../type/Type";
 import CartButton from "./CartButton";
-import { useCart } from "../context/CartContext";
 
 export const CartItems = () => {
   

@@ -16,9 +16,7 @@ const CartDetails = () => {
       ) : (
         <>
         <div className="flex gap-7">
-          {cartItems.map((cart, index) => (
-            <CartItems element={cart} index={index} />
-          ))}
+          <CartItems />
         </div>
         <div className="my-6 text-xl font-bold">
         <p>Total: ${cartTotal}</p>
