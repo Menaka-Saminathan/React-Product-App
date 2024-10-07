@@ -1,7 +1,6 @@
-import { useState, useMemo, ReactNode } from "react";
+import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-// import { useCartTotal } from "../context/CartTotal";
 import { PRODUCT_PATH } from "../constant/Constants";
 import CartItems from "./CartItems";
 import Button from "./Button";

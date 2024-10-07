@@ -5,7 +5,7 @@ import AccessoryItem from "../components/AccessoryItem";
 import { CARTDETAILS_PATH } from "../constant/Constants";
 import { AccessoryList } from "../data/AccessoriesList";
 
-function Accessories() {
+export default function Accessories() {
   const { cartItems } = useCart();
 
   return (
@@ -35,12 +35,10 @@ function Accessories() {
         </div>
         <div className="flex flex-wrap gap-36 p-10">
           {AccessoryList.map((accessory) => (
-            <AccessoryItem accessory={accessory} />
+            <AccessoryItem accessories={accessory} />
           ))}
         </div>
       </div>
     </>
   );
 }
-
-export default Accessories;

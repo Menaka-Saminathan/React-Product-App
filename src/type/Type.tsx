@@ -56,3 +56,11 @@ export type totalPrice = {
   increaseTotal: (amount: number) => void,
   decreaseTotal: (amount: number) => void,
 };
+
+export type Element = {
+  element: Product
+}
+
+export type Accesses = {
+  accessories: Product
+}

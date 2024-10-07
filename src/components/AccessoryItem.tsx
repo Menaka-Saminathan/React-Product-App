@@ -1,31 +1,31 @@
 import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
-import { Product } from "../type/Type";
+import { Accesses } from "../type/Type";
 import Button from "./Button";
 import CartButton from "./CartButton";
 
-export default function AccessoryItem(props: { accessory: Product }) {
+export default function AccessoryItem({accessories}: Accesses ) {
   const { addToCart, cartItems } = useCart();
   const [accessory, setAccessory] = useState(
-    cartItems.find((items) => items.id == props.accessory.id)
+    cartItems.find((items) => items.id == accessories.id)
   );
 
   useEffect(() => {
-    setAccessory(cartItems.find((item) => item.id == props.accessory.id));
-  }, [cartItems, props.accessory.id]);
+    setAccessory(cartItems.find((item) => item.id ==accessories.id));
+  }, [cartItems, accessories.id]);
 
   return (
-    <div key={props.accessory.id} className="border rounded-xl p-5 bg-rose-50">
+    <div key={accessories.id} className="border rounded-xl p-5 bg-rose-50">
       <div className="m-5">
         <img
-          src={props.accessory.image}
-          alt={props.accessory.title}
+          src={accessories.image}
+          alt={accessories.title}
           width={300}
         />
       </div>
       <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
-        <p>{props.accessory.title}</p>
-        <span>Price : {props.accessory.price}</span>
+        <p>{accessories.title}</p>
+        <span>Price : {accessories.price}</span>
         {accessory ? (
           <div className="border-black rounded-lg w-32 px-5 py-1 bg-indigo-500 text-white">
             <CartButton element={accessory} />
@@ -34,7 +34,7 @@ export default function AccessoryItem(props: { accessory: Product }) {
           <Button
             className="w-36 text-lg"
             varient="primary"
-            onClick={() => addToCart(props.accessory)}
+            onClick={() => addToCart(accessories)}
             name="Add Cart"
           />
         )}

@@ -2,27 +2,26 @@ import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
 import Button from "./Button";
 import CartButton from "./CartButton";
-import { Product } from "../type/Type";
+import { Element } from "../type/Type";
 
-function ProductItems(props: { element: Product }) {
+function ProductItems({element}: Element) {
   const { addToCart, cartItems } = useCart();
-  const { id, title, price, image, quantity } = props.element;
   const [carts, setCarts] = useState(
-    cartItems.find((items) => items.id == id)
+    cartItems.find((items) => items.id == element.id)
   );
 
   useEffect(() => {
-    setCarts(cartItems.find((items) => items.id == id));
-  }, [cartItems, id]);
+    setCarts(cartItems.find((items) => items.id == element.id));
+  }, [cartItems, element.id]);
 
   return (
-    <div key={id} className="border rounded-xl p-5 bg-rose-50">
+    <div key={element.id} className="border rounded-xl p-5 bg-rose-50">
       <div className="m-5">
-        <img src={image} alt={title} width={300} />
+        <img src={element.image} alt={element.title} width={300} />
       </div>
       <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
-        <p>{title}</p>
-        <span>Price : {price * quantity}</span>
+        <p>{element.title}</p>
+        <span>Price : {element.price * element.quantity}</span>
         {carts ? (
           <div className="border-black rounded-lg w-32 px-5 py-1 bg-indigo-500 text-white">
             <CartButton element={carts} />
@@ -31,7 +30,7 @@ function ProductItems(props: { element: Product }) {
           <Button
             className="w-36 text-lg"
             varient="primary"
-            onClick={() => addToCart(props.element)}
+            onClick={() => addToCart(element)}
             name="Add Cart"
           />
         )}
