@@ -15,7 +15,6 @@ import acces20 from "../assets/acces-20.webp";
 import acces21 from "../assets/acces-21.webp";
 import acces22 from "../assets/acces-22.webp";
 
-
 export const AccessoryList: Accessory[] = [
   {
     id: 1,
@@ -38,19 +37,19 @@ export const AccessoryList: Accessory[] = [
     image: acces3,
     quantity: 0,
   },
-  { 
-    id: 4, 
-    title: "Design Stamp", 
-    price: 299, 
-    image: acces4, 
-    quantity: 0 
+  {
+    id: 4,
+    title: "Design Stamp",
+    price: 299,
+    image: acces4,
+    quantity: 0,
   },
-  { 
-    id: 5, 
-    title: "Pencil Case", 
-    price: 299, 
-    image: acces6, 
-    quantity: 0 
+  {
+    id: 5,
+    title: "Pencil Case",
+    price: 299,
+    image: acces6,
+    quantity: 0,
   },
   {
     id: 6,
@@ -59,12 +58,12 @@ export const AccessoryList: Accessory[] = [
     image: acces7,
     quantity: 0,
   },
-  { 
-    id: 7, 
-    title: "Diary", 
-    price: 299, 
-    image: acces8, 
-    quantity: 0 
+  {
+    id: 7,
+    title: "Diary",
+    price: 299,
+    image: acces8,
+    quantity: 0,
   },
   {
     id: 8,
@@ -80,19 +79,20 @@ export const AccessoryList: Accessory[] = [
     image: acces12,
     quantity: 0,
   },
-  { 
-    id: 10, 
-    title: `Panda Sticker`, 
-    price: 299, 
-    image: acces14, 
-    quantity: 0 
+  {
+    id: 10,
+    title: `Panda Sticker`,
+    price: 299,
+    image: acces14,
+    quantity: 0,
   },
-  { 
-    id: 11, 
-    title: "Pencil Bag", 
-    price: 299, 
-    image: acces15, 
-    quantity: 0 },
+  {
+    id: 11,
+    title: "Pencil Bag",
+    price: 299,
+    image: acces15,
+    quantity: 0,
+  },
   {
     id: 12,
     title: "Color Marker",
@@ -120,5 +120,5 @@ export const AccessoryList: Accessory[] = [
     price: 299,
     image: acces22,
     quantity: 0,
-  }
+  },
 ];

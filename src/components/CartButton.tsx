@@ -1,8 +1,9 @@
+import { useMemo } from "react";
 import { useCart } from "../context/CartContext";
 import { Product } from "../type/Type";
 import Button from "./Button";
 
-function CartButton(props: { element: Product }) {
+export default function CartButton(props: { element: Product }) {
   const { addToCart, removeFromCart } = useCart();
 
   return (
@@ -23,5 +24,3 @@ function CartButton(props: { element: Product }) {
     </div>
   );
 }
-
-export default CartButton;

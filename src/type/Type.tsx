@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export type Carts = {
-  cartTotal: number;
+  product: Product[];
   cartItems: Product[];
   addToCart: (product: Product) => void;
   removeFromCart: (product: Product) => void;
@@ -49,4 +49,10 @@ export type AuthProps = {
 
 export type Props = { 
   children: ReactNode 
+};
+
+export type totalPrice = {
+  cartTotal: number,
+  increaseTotal: (amount: number) => void,
+  decreaseTotal: (amount: number) => void,
 };

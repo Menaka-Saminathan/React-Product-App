@@ -4,7 +4,6 @@ import Button from "./Button";
 import "../scss/Button.scss";
 
 export default function ImageSlider() {
-  
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
@@ -22,7 +21,6 @@ export default function ImageSlider() {
           />
         ))}
       </div>
-
       <Button
         onClick={() =>
           setCurrentIndex(
@@ -34,11 +32,7 @@ export default function ImageSlider() {
         name="<"
       />
       <Button
-        onClick={() => 
-          setCurrentIndex(
-            (currentIndex + 1) % images.length
-          )
-        }
+        onClick={() => setCurrentIndex((currentIndex + 1) % images.length)}
         className="right-0 tranform"
         varient="third"
         name=">"

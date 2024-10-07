@@ -1,12 +1,20 @@
+import { useState, useMemo, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-import {PRODUCT_PATH} from "../constant/constant";
+// import { useCartTotal } from "../context/CartTotal";
+import { PRODUCT_PATH } from "../constant/Constants";
 import CartItems from "./CartItems";
 import Button from "./Button";
 
-const CartDetails = () => {
+export default function CartDetails() {
   const navigate = useNavigate();
-  const { cartItems, cartTotal } = useCart();
+  const { cartItems } = useCart();
+
+  const value: number = useMemo(() => {
+    let total =0 
+    cartItems.map((items) => total += items.price * (items.quantity || 0))
+    return total;
+  }, [cartItems])
 
   return (
     <div className=" p-10 ">
@@ -15,12 +23,10 @@ const CartDetails = () => {
         <p className="text-5xl font-semibold mb-4">Your cart is empty.</p>
       ) : (
         <>
-        <div className="flex gap-7">
           <CartItems />
-        </div>
-        <div className="my-6 text-xl font-bold">
-        <p>Total: ${cartTotal}</p>
-      </div>
+          <div className="my-6 text-xl font-bold">
+            <p>Total: ${value}</p>
+          </div>
         </>
       )}
       <Button
@@ -32,5 +38,3 @@ const CartDetails = () => {
     </div>
   );
 };
-
-export default CartDetails;

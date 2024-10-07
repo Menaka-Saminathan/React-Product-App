@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import CartDetails from "../components/CartDetails";
 import AccessoryItem from "../components/AccessoryItem";
-import { CARTDETAILS_PATH } from "../constant/constant";
+import { CARTDETAILS_PATH } from "../constant/Constants";
 import { AccessoryList } from "../data/AccessoriesList";
 
 function Accessories() {

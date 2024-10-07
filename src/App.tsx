@@ -9,7 +9,7 @@ import {
   CARTDETAILS_PATH,
   USER_LOGIN,
   ACCESSORY_PATH,
-} from "./constant/constant";
+} from "./constant/Constants";
 import Accessories from "./pages/Accessories";
 import Contact from "./pages/Contact";
 import Index from "./pages/Index";

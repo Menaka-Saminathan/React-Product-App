@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Timer from "../components/Timer";
-import { USER_LOGIN } from "../constant/constant";
+import { USER_LOGIN } from "../constant/Constants";
 import "../scss/Mystyle.scss";
 import indeximg from "../assets/index.webp";
 

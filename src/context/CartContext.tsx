@@ -1,41 +1,43 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 import { Product, Carts } from "../type/Type";
+import { ProductList } from "../data/ProductList";
 
 const CartContext = createContext<Carts | undefined>(undefined);
 
 export const Cart = ({ children }: { children: ReactNode }) => {
-  const [cartTotal, setCartTotal] = useState<number>(0);
   const [cartItems, setCartItems] = useState<Product[]>([]);
+  const [product, setProduct] = useState(ProductList);
 
   const addToCart = (product: Product) => {
     const existingCart = cartItems.find((item) => item.id == product.id);
     if (existingCart) {
       existingCart.quantity += 1;
-      setCartItems(cartItems);
+      setProduct((prev) =>
+        prev.map((data) => (data.id === existingCart.id ? existingCart : data))
+      );
     } else {
       product.quantity += 1;
-      setCartItems([...cartItems, product]);
+      setCartItems(() => [...cartItems, product]);
     }
-    setCartTotal(cartTotal + product.price);
   };
 
+  console.log(product)
   const removeFromCart = (product: Product) => {
-    const existingCart = cartItems.find((item) => item.id == product.id);
-    if (existingCart) {
-      existingCart.quantity -= 1;
-      if (existingCart.quantity == 0) {
-        setCartItems(cartItems.filter((item) => item.id !== product.id));
-      } else {
-        setCartItems(cartItems);
-      }
+    if (product.quantity == 1) {
+      setCartItems(cartItems.filter((item) => item.id !== product.id));
+    } else {
+      product.quantity -= 1;
+      setProduct((prev) =>
+        prev.map((data) => (data.id === product.id ? product : data))
+      );
+      setCartItems(cartItems);
     }
-    setCartTotal(cartTotal - product.price);
   };
 
   const value = {
     removeFromCart,
-    cartTotal,
     addToCart,
+    product,
     cartItems,
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

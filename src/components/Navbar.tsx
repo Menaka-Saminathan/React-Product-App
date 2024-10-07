@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import { PRODUCT_PATH, HOME_PATH, CONTACT_PATH } from "../constant/constant";
+import { PRODUCT_PATH, HOME_PATH, CONTACT_PATH } from "../constant/Constants";
 import "../App.css";
 
 function Navbar() {

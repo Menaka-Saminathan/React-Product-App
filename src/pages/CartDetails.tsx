@@ -2,11 +2,13 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import CartItems from "../components/CartItems";
 import Button from "../components/Button";
-import { PRODUCT_PATH } from "../constant/constant";
+import { PRODUCT_PATH } from "../constant/Constants";
+import { useCartTotal } from "../context/CartTotal";
 
 const CartDetails = () => {
   const navigate = useNavigate();
-  const { cartItems, cartTotal } = useCart();
+  const { cartItems } = useCart();
+  const { cartTotal } = useCartTotal();
 
   return (
     <div className="bg-slate-50 p-10 ">

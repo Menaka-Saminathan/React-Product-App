@@ -6,10 +6,11 @@ import { Product } from "../type/Type";
 
 function ProductItems(props: { element: Product }) {
   const { addToCart, cartItems } = useCart();
-  const { id, title, price, image } = props.element;
+  const { id, title, price, image, quantity } = props.element;
   const [carts, setCarts] = useState(
     cartItems.find((items) => items.id == id)
   );
+
   useEffect(() => {
     setCarts(cartItems.find((items) => items.id == id));
   }, [cartItems, id]);
@@ -21,7 +22,7 @@ function ProductItems(props: { element: Product }) {
       </div>
       <div className="flex flex-col gap-5 text-2xl font-exo text-slate-600 pt-6">
         <p>{title}</p>
-        <span>Price : {price}</span>
+        <span>Price : {price * quantity}</span>
         {carts ? (
           <div className="border-black rounded-lg w-32 px-5 py-1 bg-indigo-500 text-white">
             <CartButton element={carts} />

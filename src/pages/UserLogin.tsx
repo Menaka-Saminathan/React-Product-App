@@ -1,7 +1,7 @@
 import { FormEvent, useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/Authenticate";
-import { HOME_PATH } from "../constant/constant";
+import { HOME_PATH } from "../constant/Constants";
 import { UserData } from "../data/UserData";
 
 export default function UserLogin() {

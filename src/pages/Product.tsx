@@ -2,15 +2,14 @@ import { Link, Outlet } from "react-router-dom";
 import { useCart } from "../context/CartContext.tsx";
 import CartDetails from "../components/CartDetails.tsx";
 import ProductItems from "../components/ProductItems.tsx";
-import { ACCESSORY_PATH, CARTDETAILS_PATH } from "../constant/constant.tsx";
+import { ACCESSORY_PATH, CARTDETAILS_PATH } from "../constant/Constants.tsx";
 import { ProductList } from "../data/ProductList.tsx";
+import { useState } from "react";
 
-function Product() {
-  const { cartItems } = useCart();
-
+export default function Product() {
+  const { cartItems, product } = useCart();
   return (
     <div className="bg-slate-50">
-      {/* <Navbar /> */}
       <div className="flex gap-80">
         <form className="flex border border-gray-300 ml-96 my-5 rounded-md w-2/5 justify-between p-2">
           <div>
@@ -34,8 +33,8 @@ function Product() {
         </div>
       </div>
       <div className="flex flex-wrap gap-36 p-10">
-        {ProductList.map((product) => (
-          <ProductItems element={product} />
+        {product.map((products) => (
+          <ProductItems element={products} />
         ))}
       </div>
       <hr className="b-2 my-10 w-full" />
@@ -52,5 +51,3 @@ function Product() {
     </div>
   );
 }
-
-export default Product;
