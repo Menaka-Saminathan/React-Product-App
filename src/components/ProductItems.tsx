@@ -5,7 +5,7 @@ import CartButton from "./CartButton";
 import { Element } from "../type/Type";
 
 export default function ProductItems({element}: Element) {
-  const { addToCart, cartItems } = useCart();
+  const { dispatch, cartItems } = useCart();
   const [carts, setCarts] = useState(
     cartItems.find((items) => items.id == element.id)
   );
@@ -30,7 +30,7 @@ export default function ProductItems({element}: Element) {
           <Button
             className="w-36 text-lg"
             varient="primary"
-            onClick={() => addToCart(element)}
+            onClick={() => dispatch({ type: 'ADD_CART', payload: element })}
             name="Add Cart"
           />
         )}

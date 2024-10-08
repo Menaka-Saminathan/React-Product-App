@@ -4,10 +4,9 @@ import CartDetails from "../components/CartDetails.tsx";
 import ProductItems from "../components/ProductItems.tsx";
 import { ACCESSORY_PATH, CARTDETAILS_PATH } from "../constant/Constants.tsx";
 import { ProductList } from "../data/ProductList.tsx";
-import { useState } from "react";
 
 export default function Product() {
-  const { cartItems, product } = useCart();
+  const { cartItems } = useCart();
   return (
     <div className="bg-slate-50">
       <div className="flex gap-80">
@@ -33,7 +32,7 @@ export default function Product() {
         </div>
       </div>
       <div className="flex flex-wrap gap-36 p-10">
-        {product.map((products) => (
+        {ProductList.map((products) => (
           <ProductItems element={products} />
         ))}
       </div>

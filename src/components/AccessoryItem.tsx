@@ -5,7 +5,7 @@ import Button from "./Button";
 import CartButton from "./CartButton";
 
 export default function AccessoryItem({accessories}: Accesses ) {
-  const { addToCart, cartItems } = useCart();
+  const { dispatch, cartItems } = useCart();
   const [accessory, setAccessory] = useState(
     cartItems.find((items) => items.id == accessories.id)
   );
@@ -34,7 +34,7 @@ export default function AccessoryItem({accessories}: Accesses ) {
           <Button
             className="w-36 text-lg"
             varient="primary"
-            onClick={() => addToCart(accessories)}
+            onClick={() => dispatch({ type: 'ADD_CART', payload: accessories })}
             name="Add Cart"
           />
         )}

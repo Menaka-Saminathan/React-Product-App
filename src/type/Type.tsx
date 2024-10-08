@@ -1,10 +1,11 @@
 import { ReactNode } from "react";
 
 export type Carts = {
-  product: Product[];
+  // productList: Product[];
   cartItems: Product[];
-  addToCart: (product: Product) => void;
-  removeFromCart: (product: Product) => void;
+  dispatch: React.Dispatch<Action>;
+  // addToCart: (product: Product) => void;
+  // removeFromCart: (product: Product) => void;
 };
 
 export type Product = {
@@ -22,7 +23,6 @@ export interface Accessory {
   image: string;
   quantity: number;
 }
-
 
 export type ButtonField = {
   className: String;
@@ -47,20 +47,37 @@ export type AuthProps = {
   Login: () => void;
 };
 
-export type Props = { 
-  children: ReactNode 
+export type Props = {
+  children: ReactNode;
 };
 
 export type totalPrice = {
-  cartTotal: number,
-  increaseTotal: (amount: number) => void,
-  decreaseTotal: (amount: number) => void,
+  cartTotal: number;
+  increaseTotal: (amount: number) => void;
+  decreaseTotal: (amount: number) => void;
 };
 
 export type Element = {
-  element: Product
-}
+  element: Product;
+};
 
 export type Accesses = {
-  accessories: Product
+  accessories: Product;
+};
+
+export type Action = { 
+  type: string; 
+  payload: Product 
+}
+
+export type InitialType = {
+  cartItems: never[];
+  // productList: Product[];
+};
+
+export type ProductCart = {
+  removeFromCart: (product: Product) => void;
+  addToCart: (product: Product) => void;
+  productList: Product[];
+  cartItems: Product[];
 }

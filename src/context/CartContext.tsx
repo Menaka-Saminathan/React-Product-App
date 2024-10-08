@@ -1,44 +1,56 @@
-import { createContext, useContext, useState, ReactNode } from "react";
-import { Product, Carts } from "../type/Type";
-import { ProductList } from "../data/ProductList";
+import { createContext, useContext, ReactNode, useReducer } from "react";
+import { Product, Carts, Action, InitialType  } from "../type/Type";
+import { ActionType } from "../enum/Action";
+
+const initialState: InitialType = {
+  cartItems: []
+};
+
+
+const cardReducer = (state: { cartItems: Product[] }, action: Action): any => {
+    switch (action.type) {
+      case ActionType.ADD_CART: 
+        const existingCart = state.cartItems.find((item) => item.id === action.payload.id);  
+        if (existingCart) {
+          return {
+            ...state,
+            cartItems: state.cartItems.map((items) => items.id === existingCart.id ? {...existingCart , quantity: existingCart.quantity + 1} : items)
+          }
+        } else {
+          const newProduct = {...action.payload, quantity:1};
+          return {
+            ...state, cartItems: [...state.cartItems, newProduct]
+          }
+        };
+      case ActionType.REMOVE_CART:
+        const removeProduct = state.cartItems.find(item => item.id === action.payload.id);
+        if (removeProduct?.quantity === 1) {
+          return {
+            ...state,
+            cartItems: state.cartItems.filter(item => item.id !== removeProduct.id),
+          };
+        } else {
+          return {
+            ...state,
+            cartItems: state.cartItems.map(item =>
+              item.id === removeProduct?.id
+                ? { ...removeProduct, quantity: removeProduct!.quantity - 1 }
+                : item
+            ),
+          };
+        }
+        default: 
+        return state;
+    }
+  }
 
 const CartContext = createContext<Carts | undefined>(undefined);
 
 export const Cart = ({ children }: { children: ReactNode }) => {
-  const [cartItems, setCartItems] = useState<Product[]>([]);
-  const [product, setProduct] = useState(ProductList);
-
-  const addToCart = (product: Product) => {
-    const existingCart = cartItems.find((item) => item.id == product.id);
-    if (existingCart) {
-      existingCart.quantity += 1;
-      setProduct((prev) =>
-        prev.map((data) => (data.id === existingCart.id ? existingCart : data))
-      );
-    } else {
-      product.quantity += 1;
-      setCartItems(() => [...cartItems, product]);
-    }
-  };
-
-  console.log(product)
-  const removeFromCart = (product: Product) => {
-    if (product.quantity == 1) {
-      setCartItems(cartItems.filter((item) => item.id !== product.id));
-    } else {
-      product.quantity -= 1;
-      setProduct((prev) =>
-        prev.map((data) => (data.id === product.id ? product : data))
-      );
-      setCartItems(cartItems);
-    }
-  };
-
+  const [state, dispatch] = useReducer(cardReducer, initialState)
   const value = {
-    removeFromCart,
-    addToCart,
-    product,
-    cartItems,
+    dispatch,
+    cartItems: state.cartItems    
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
