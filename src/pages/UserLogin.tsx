@@ -1,15 +1,16 @@
 import { FormEvent, useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/Authenticate";
 import { HOME_PATH } from "../constant/Constants";
 import { UserData } from "../data/UserData";
+import { useAuth } from "../context/Authenticate";
+import { Login } from "../enum/Login";
 
 export default function UserLogin() {
   const navigate = useNavigate();
+  const { dispatch } = useAuth();
   const [email, setEmail] = useState<String>("");
   const [password, setPassword] = useState<String>("");
   const [error, setError] = useState<String>("");
-  const { Login } = useAuth();
 
   const handleLogin = useCallback(
     (e: FormEvent) => {
@@ -18,7 +19,7 @@ export default function UserLogin() {
         return element.email === email && element.password === password;
       });
       if (users) {
-        Login();
+        dispatch({type: Login.LOGIN})
         navigate(HOME_PATH);
       } else if (email === "" && password == "") {
         setError("Empty inputs are not accept");

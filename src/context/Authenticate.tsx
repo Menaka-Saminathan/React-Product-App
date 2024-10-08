@@ -1,15 +1,29 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
 import { AuthProps, Props } from "../type/Type";
+import { Login } from "../enum/Login";
 
 const AuthContext = createContext<AuthProps | undefined>(undefined);
 
+const initialState = {
+  valid : false
+}
+
+const validation = (state: { valid: boolean; }, action: { type: string; }): any => {
+  switch(action.type){
+    case Login.LOGIN :
+      return state.valid = true;
+    case Login.LOGOUT :
+      return state.valid = false;
+    default: return state;
+  }
+}
+
 export function Authenticate({ children }: Props) {
-  const [isValid, setIsValid] = useState<boolean>(false);
-  const Login = () => setIsValid(true);
+  const [state, dispatch] = useReducer(validation, initialState)
 
   const value = {
-    isValid,
-    Login,
+    isValid: state.valid,
+    dispatch
   };
 
   return (

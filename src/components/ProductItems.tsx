@@ -3,6 +3,7 @@ import { useCart } from "../context/CartContext";
 import Button from "./Button";
 import CartButton from "./CartButton";
 import { Element } from "../type/Type";
+import { ActionType } from "../enum/Action";
 
 export default function ProductItems({element}: Element) {
   const { dispatch, cartItems } = useCart();
@@ -30,7 +31,7 @@ export default function ProductItems({element}: Element) {
           <Button
             className="w-36 text-lg"
             varient="primary"
-            onClick={() => dispatch({ type: 'ADD_CART', payload: element })}
+            onClick={() => dispatch({ type: ActionType.ADD_CART, payload: element })}
             name="Add Cart"
           />
         )}

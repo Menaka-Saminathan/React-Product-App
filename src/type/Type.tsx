@@ -1,11 +1,8 @@
 import { ReactNode } from "react";
 
 export type Carts = {
-  // productList: Product[];
   cartItems: Product[];
   dispatch: React.Dispatch<Action>;
-  // addToCart: (product: Product) => void;
-  // removeFromCart: (product: Product) => void;
 };
 
 export type Product = {
@@ -44,7 +41,7 @@ export type user = {
 
 export type AuthProps = {
   isValid: boolean;
-  Login: () => void;
+  dispatch: React.Dispatch<{ type: string; }>;
 };
 
 export type Props = {
@@ -72,12 +69,4 @@ export type Action = {
 
 export type InitialType = {
   cartItems: never[];
-  // productList: Product[];
 };
-
-export type ProductCart = {
-  removeFromCart: (product: Product) => void;
-  addToCart: (product: Product) => void;
-  productList: Product[];
-  cartItems: Product[];
-}
